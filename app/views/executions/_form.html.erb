@@ -1,0 +1,25 @@
+<%= form_for(@execution) do |f| %>
+  <% if @execution.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@execution.errors.count, "error") %> prohibited this execution from being saved:</h2>
+
+      <ul>
+      <% @execution.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :qty %><br />
+    <%= f.text_field :qty %>
+  </div>
+  <div class="field">
+    <%= f.label :trade_id %><br />
+    <%= f.text_field :trade_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

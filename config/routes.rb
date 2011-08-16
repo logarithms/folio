@@ -1,4 +1,22 @@
 Folio::Application.routes.draw do
+  get "batch/index"
+
+  get "batch/import"
+
+  get "batch/match"
+
+  get "batch/trunc"
+
+  get "batch/schedule_D"
+
+  resources :executions
+
+  resources :roundtrips
+
+  resources :trades
+
+  get "home/index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,25 @@
+<h1>Listing executions</h1>
+
+<table>
+  <tr>
+    <th>Qty</th>
+    <th>Trade</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @executions.each do |execution| %>
+  <tr>
+    <td><%= execution.qty %></td>
+    <td><%= execution.trade_id %></td>
+    <td><%= link_to 'Show', execution %></td>
+    <td><%= link_to 'Edit', edit_execution_path(execution) %></td>
+    <td><%= link_to 'Destroy', execution, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Execution', new_execution_path %>

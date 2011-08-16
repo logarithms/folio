@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  ameritradeid: MyString
+  symbol: MyString
+  date: 2011-08-16
+  qty: 1
+  amount: 1.5
+  action_cd: 1
+  state_cd: 1
+
+two:
+  ameritradeid: MyString
+  symbol: MyString
+  date: 2011-08-16
+  qty: 1
+  amount: 1.5
+  action_cd: 1
+  state_cd: 1

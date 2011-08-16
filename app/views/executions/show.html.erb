@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Qty:</b>
+  <%= @execution.qty %>
+</p>
+
+<p>
+  <b>Trade:</b>
+  <%= @execution.trade_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_execution_path(@execution) %> |
+<%= link_to 'Back', executions_path %>
