@@ -44,6 +44,12 @@ class Roundtrip < ActiveRecord::Base
     ! long_term?
   end
 
+  def long_or_short_term
+    result = :long_term if long_term?
+    result = :short_term if short_term?
+    result
+  end
+
   def wash?
     ! profit?
 # && no activity in the future <30 days

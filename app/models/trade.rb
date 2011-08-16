@@ -41,6 +41,10 @@ class Trade < ActiveRecord::Base
   def unmatched_qty
     qty - executions.sum(:qty)
   end
+
+  def name
+    symbol
+  end
 #----------------------------------------------------------------
 
 end

@@ -1,2 +1,18 @@
 <h1>Batch#index</h1>
-<p>Find me in app/views/batch/index.html.erb</p>
+<p>Processing Date: <%= @date %></p>
+<pre>
+  <!--%= @trades.to_json %-->
+<!--%= @portfolio.trades.trades.to_xml %> -->
+</pre>
+
+<table border="1" id="box-table-a">
+  <tbody>
+
+    <% @files.each { |datum| %>
+    <tr> <td><%= link_to 'import '+datum, 'import?year='+datum %></td> </tr>
+    <% } %>
+    <tr> <td><%= link_to 'match', 'match' %></td> </tr>
+    <tr> <td><%= link_to 'truncate', 'trunc' %></td> </tr>
+    <tr> <td><%= link_to 'IRS 1040 Schedule D', 'schedule_D.json' %></td> </tr>
+  </tbody>
+</table>

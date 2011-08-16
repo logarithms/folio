@@ -2,13 +2,14 @@
 
 <table>
   <tr>
+    <th>ID</th>
     <th>Ameritradeid</th>
     <th>Symbol</th>
     <th>Date</th>
     <th>Qty</th>
     <th>Amount</th>
-    <th>Action cd</th>
-    <th>State cd</th>
+    <th>Action</th>
+    <th>State</th>
     <th></th>
     <th></th>
     <th></th>
@@ -16,13 +17,14 @@
 
 <% @trades.each do |trade| %>
   <tr>
+    <td><%= trade.id %></td>
     <td><%= trade.ameritradeid %></td>
     <td><%= trade.symbol %></td>
     <td><%= trade.date %></td>
     <td><%= trade.qty %></td>
     <td><%= trade.amount %></td>
-    <td><%= trade.action_cd %></td>
-    <td><%= trade.state_cd %></td>
+    <td><%= trade.action %></td>
+    <td><%= trade.state %></td>
     <td><%= link_to 'Show', trade %></td>
     <td><%= link_to 'Edit', edit_trade_path(trade) %></td>
     <td><%= link_to 'Destroy', trade, :confirm => 'Are you sure?', :method => :delete %></td>
