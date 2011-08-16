@@ -4,6 +4,7 @@
   <tr>
     <th>Qty</th>
     <th>Trade</th>
+    <th>Ameritrade</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,6 +14,7 @@
   <tr>
     <td><%= execution.qty %></td>
     <td><%= execution.trade_id %></td>
+    <td><%= execution.trade.ameritradeid %></td>
     <td><%= link_to 'Show', execution %></td>
     <td><%= link_to 'Edit', edit_execution_path(execution) %></td>
     <td><%= link_to 'Destroy', execution, :confirm => 'Are you sure?', :method => :delete %></td>

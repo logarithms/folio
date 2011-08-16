@@ -24,6 +24,10 @@
     <%= f.date_select :date %>
   </div>
   <div class="field">
+    <%= f.label :action %><br />
+    <%= f.select(:action, Trade.actions.keys) %>
+  </div>
+  <div class="field">
     <%= f.label :qty %><br />
     <%= f.text_field :qty %>
   </div>
@@ -32,12 +36,8 @@
     <%= f.text_field :amount %>
   </div>
   <div class="field">
-    <%= f.label :action_cd %><br />
-    <%= f.text_field :action_cd %>
-  </div>
-  <div class="field">
-    <%= f.label :state_cd %><br />
-    <%= f.text_field :state_cd %>
+    <%= f.label :state %><br />
+    <%= f.select(:state, Trade.states.keys) %>
   </div>
   <div class="actions">
     <%= f.submit %>

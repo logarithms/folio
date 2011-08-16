@@ -1,9 +1,20 @@
-<h1>Listing roundtrips</h1>
+<h1>Roundtrip trades</h1>
 
 <table>
   <tr>
-    <th>Open</th>
-    <th>Close</th>
+    <th>symbol</th>
+    <th>qty</th>
+    <th>profit</th>
+    <th>position:long or short?</th>
+    <th>tax code</th>
+    <th>long term?</th>
+    <th>wash?</th>
+    <th>Open date</th>
+    <th>cost basis</th>
+    <th>Close date</th>
+    <th>sale amt</th>
+    <th>Open ID</th>
+    <th>Close ID</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,8 +22,20 @@
 
 <% @roundtrips.each do |roundtrip| %>
   <tr>
-    <td><%= roundtrip.open_id %></td>
-    <td><%= roundtrip.close_id %></td>
+    <td><%= roundtrip.open.trade.symbol %></td>
+    <td><%= roundtrip.open.qty %></td>
+    <td><%= number_to_currency( roundtrip.profit , :negative_format => "(%u%n)") %></td>
+    <td><%= roundtrip.open.trade.long_or_short_action %></td>
+    <td> <%= roundtrip.tax_code %></td>
+    <td><%= roundtrip.long_term? %>
+        <%= roundtrip.term %></td>
+    <td><%= roundtrip.wash? %></td>
+    <td><%= roundtrip.open.trade.date %></td>
+    <td><%= number_to_currency(roundtrip.costbasis) %></td>
+    <td><%= roundtrip.close.trade.date %></td>
+    <td><%= number_to_currency(roundtrip.close_amt) %></td>
+    <td><%= roundtrip.close.trade.ameritradeid %></td>
+    <td><%= roundtrip.open.trade.ameritradeid %></td>
     <td><%= link_to 'Show', roundtrip %></td>
     <td><%= link_to 'Edit', edit_roundtrip_path(roundtrip) %></td>
     <td><%= link_to 'Destroy', roundtrip, :confirm => 'Are you sure?', :method => :delete %></td>
