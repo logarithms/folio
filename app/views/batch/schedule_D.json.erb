@@ -6,9 +6,9 @@ TD
 <%= p_n_l.tax_code %>
 C1
 L1
-P<%= p_n_l.open.qty %> <%= p_n_l.long_or_short_term.to_s %>:<%= p_n_l.open.trade.name %> (<%= p_n_l.open.trade.symbol %>)
-D <%= p_n_l.open.trade.date %>
-D <%= p_n_l.close.trade.date %>
+P<%= number_with_precision(p_n_l.open.qty, :precision => 4, :delimiter => ',') %> <%= "[Short] " if p_n_l.open.trade.long_or_short_action == :short %><%= p_n_l.open.trade.name %> (<%= p_n_l.open.trade.symbol %>)
+D<%= p_n_l.open.trade.date %>
+D<%= p_n_l.close.trade.date %>
 $<%= number_to_currency(p_n_l.open.trade.amount, :unit => "") %>
 $<%= number_to_currency(p_n_l.profit, :unit => "") %>
 ^
