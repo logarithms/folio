@@ -51,8 +51,9 @@ class Roundtrip < ActiveRecord::Base
   end
 
   def wash?
-    ! profit?
+#    ! profit?
 # && no activity in the future <30 days
+    false
   end
 
   def tax_code
