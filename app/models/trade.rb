@@ -17,6 +17,7 @@ class Trade < ActiveRecord::Base
 
 #----------------------------------------------------------------
   scope :in_execution_order, order(:ameritradeid)
+  scope :in_action_order, order(:action)
   scope :closing, where("action_cd in (?,?)", Trade.actions.sell_long, Trade.actions.buy_short)
   scope :unmatched, where("state_cd in (?,?)", Trade.states.opened, Trade.states.partial)
   scope :contra_trades, lambda{|symbol, counteraction_cd|; where(symbol: symbol, action_cd: counteraction_cd)}

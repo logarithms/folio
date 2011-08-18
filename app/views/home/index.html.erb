@@ -1,2 +1,11 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1>Protforlio management</h1>
+
+<table border="1" id="box-table-a">
+  <tbody>
+    <tr> <td><%= link_to 'Trades', '/trades' %></td> </tr>
+    <tr> <td><%= link_to 'Trade - Execution legs', '/executions' %></td> </tr>
+    <tr> <td><%= link_to 'P & L', '/roundtrips' %></td> </tr>
+    <tr> <td><%= link_to 'Batch Jobs', '/batch/index' %></td> </tr>
+    <tr> <td><%= link_to 'IRS 1040 Schedule D', 'batch/schedule_D.json' %></td> </tr>
+  </tbody>
+</table>
