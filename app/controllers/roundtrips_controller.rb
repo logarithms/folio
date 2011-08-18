@@ -5,12 +5,13 @@ class RoundtripsController < ApplicationController
     @roundtrips = Roundtrip.all
 
     if params[:special] == "trade_exec"
-      render "index_executions" and return
+      render "index_trade_exec" and return
     end
  
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @roundtrips }
+      format.json
     end
   end
 

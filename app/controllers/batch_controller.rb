@@ -21,8 +21,4 @@ class BatchController < ApplicationController
     Roundtrip.delete_all
   end
 
-  def schedule_D
-    @p_n_ls = Roundtrip.find(:all)
-  end
-
 end

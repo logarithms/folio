@@ -7,7 +7,8 @@ Folio::Application.routes.draw do
 
   get "batch/trunc"
 
-  get "batch/schedule_D"
+  #get "batch/schedule_D"
+  match "batch/schedule_D" => "roundtrips#index"
 
   resources :executions
 
