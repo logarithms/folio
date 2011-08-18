@@ -1,0 +1,30 @@
+<h1>Roundtrip: trades and executions</h1>
+<img src="images/profit-and-loss.jpg" width="100" height="50"></img>
+<table>
+  <tr>
+    <th>symbol</th>
+    <th>position:long or short?</th>
+    <th>Open ID</th>
+    <th>Open date</th>
+    <th>qty</th>
+    <th>Close date</th>
+    <th>Close ID</th>
+  </tr>
+
+<% @roundtrips.each do |roundtrip| %>
+  <tr>
+    <td><%= roundtrip.open.trade.symbol %></td>
+    <td><%= roundtrip.open.trade.long_or_short_action %></td>
+    <td><%= roundtrip.open.trade.ameritradeid %></td>
+    <td><%= roundtrip.open.trade.date %></td>
+    <td><%= roundtrip.open.qty %></td>
+    <td><%= roundtrip.close.trade.date %></td>
+    <td><%= roundtrip.close.trade.ameritradeid %></td>
+
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Roundtrip', new_roundtrip_path %>
