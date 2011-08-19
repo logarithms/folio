@@ -2,7 +2,11 @@ class MatchMaker
 
   def self.match_trades year
 #    Trade.unmatched.closing.in_execution_order.each{ |trade|
-    (Trade.unmatched.s_buy_short.in_execution_order | Trade.unmatched.s_sell_long.in_execution_order).each{ |trade|
+    match_selected_trades (Trade.unmatched.s_sell_long.in_execution_order | Trade.unmatched.s_buy_short.in_execution_order)
+  end
+
+  def self.match_selected_trades trades
+    trades.each { |trade| 
       while trade.unmatched_qty > 0 do
         Trade.unmatched.contra_trades(trade).in_execution_order.each{ |cost|
           match trade, cost
