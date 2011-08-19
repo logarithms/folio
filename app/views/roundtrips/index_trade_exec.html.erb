@@ -14,7 +14,7 @@
 <% @roundtrips.each do |roundtrip| %>
   <tr>
     <td><%= roundtrip.open.trade.symbol %></td>
-    <td><%= roundtrip.open.trade.long_or_short_action %></td>
+    <td><%= roundtrip.open.trade.position %></td>
     <td><%= roundtrip.open.trade.ameritradeid %></td>
     <td><%= roundtrip.open.trade.date %></td>
     <td><%= roundtrip.open.qty %></td>

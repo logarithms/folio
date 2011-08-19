@@ -28,6 +28,10 @@
     <%= f.select(:action, Trade.actions.keys) %>
   </div>
   <div class="field">
+    <%= f.label :position %><br />
+    <%= f.select(:position, Trade.positions.keys) %>
+  </div>
+  <div class="field">
     <%= f.label :qty %><br />
     <%= f.text_field :qty %>
   </div>

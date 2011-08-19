@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110816045448) do
+ActiveRecord::Schema.define(:version => 20110818193242) do
 
   create_table "executions", :force => true do |t|
     t.integer  "qty"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20110816045448) do
     t.integer  "state_cd"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position_cd"
   end
 
 end

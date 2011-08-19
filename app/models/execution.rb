@@ -4,4 +4,9 @@ class Execution < ActiveRecord::Base
 
   belongs_to :trade
   has_one :round_trip
+
+  def amount
+    trade.amount * qty / trade.qty
+  end
+
 end

@@ -15,16 +15,24 @@ class Roundtrip < ActiveRecord::Base
 # use last years wash sale = ! profit & 
   TTaxPNLTypes={short_term:"N321", long_term:"N323", wash:"N682", xxx:"yyy"}
 
-  def costbasis
-    open.trade.amount * open.qty / open.trade.qty
+  def execution_side_by_action action
+    if open.trade.action == action then
+      open
+    else
+      close
+    end
   end
 
-  def close_amt
-    close.trade.amount * close.qty / close.trade.qty
+  def costbasis
+    execution_side_by_action(:buy).amount
+  end
+
+  def sales_price
+    execution_side_by_action(:sell).amount
   end
 
   def profit
-    costbasis + close_amt
+    costbasis + sales_price
   end
 
   def profit?

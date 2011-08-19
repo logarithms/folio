@@ -25,7 +25,7 @@
     <td><%= roundtrip.open.trade.symbol %></td>
     <td><%= roundtrip.open.qty %></td>
     <td><%= number_to_currency( roundtrip.profit , :negative_format => "(%u%n)") %></td>
-    <td><%= roundtrip.open.trade.long_or_short_action %></td>
+    <td><%= roundtrip.open.trade.position %></td>
     <td> <%= roundtrip.tax_code %></td>
     <td><%= roundtrip.long_term? %>
         <%= roundtrip.term %></td>
@@ -33,7 +33,7 @@
     <td><%= roundtrip.open.trade.date %></td>
     <td><%= number_to_currency(roundtrip.costbasis) %></td>
     <td><%= roundtrip.close.trade.date %></td>
-    <td><%= number_to_currency(roundtrip.close_amt) %></td>
+    <td><%= number_to_currency(roundtrip.sales_price) %></td>
     <td><%= roundtrip.close.trade.ameritradeid %></td>
     <td><%= roundtrip.open.trade.ameritradeid %></td>
     <td><%= link_to 'Show', roundtrip %></td>
