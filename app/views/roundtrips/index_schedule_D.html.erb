@@ -1,0 +1,23 @@
+<h1>1040 Schedule D</h1>
+<img src="images/profit-and-loss.jpg" width="100" height="50"></img>
+<table>
+  <tr>
+    <th>(a) Description of property</th>
+    <th>(b) Date acquired</th>
+    <th>(c) Date sold</th>
+    <th>(d) Sales price</th>
+    <th>(e) Cosr or other basis</th>
+    <th>(f) Gain (loss)</th>
+  </tr>
+
+<% @roundtrips.each do |roundtrip| %>
+  <tr>
+    <td><%= number_with_precision(roundtrip.open.qty, :precision => 0, :delimiter => ',') %> <%= "[Short] " if roundtrip.open.trade.position == :short %><%= roundtrip.open.trade.name %> (<%= roundtrip.open.trade.symbol %>)</td>
+    <td><%= roundtrip.open.trade.date %></td>
+    <td><%= roundtrip.close.trade.date %></td>
+    <td><%= number_to_currency(roundtrip.sales_price, :unit => "") %></td>
+    <td><%= number_to_currency(- roundtrip.costbasis, :unit => "") %></td>
+    <td><%= number_to_currency( roundtrip.profit , :negative_format => "(%u%n)") %></td>
+  </tr>
+<% end %>
+</table>

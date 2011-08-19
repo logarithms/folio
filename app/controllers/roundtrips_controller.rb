@@ -8,6 +8,10 @@ class RoundtripsController < ApplicationController
       render "index_trade_exec" and return
     end
  
+    if params[:special] == "schedule_D"
+      render "index_schedule_D" and return
+    end
+ 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @roundtrips }
