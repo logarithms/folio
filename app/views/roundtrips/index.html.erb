@@ -31,9 +31,9 @@
         <%= roundtrip.term %></td>
     <td><%= roundtrip.wash? %></td>
     <td><%= roundtrip.open.trade.date %></td>
-    <td><%= number_to_currency(roundtrip.costbasis) %></td>
+    <td><%= number_to_currency(roundtrip.open.trade.amount) %></td>
     <td><%= roundtrip.close.trade.date %></td>
-    <td><%= number_to_currency(roundtrip.sales_price) %></td>
+    <td><%= number_to_currency(roundtrip.close.trade.amount) %></td>
     <td><%= roundtrip.close.trade.ameritradeid %></td>
     <td><%= roundtrip.open.trade.ameritradeid %></td>
     <td><%= link_to 'Show', roundtrip %></td>

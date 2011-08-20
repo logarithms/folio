@@ -1,5 +1,5 @@
-V035
-ATD AMETRADE DIVISION OF TD AMERITRADE INC
+V041
+AVardhan folio v1.1
 D<%= @processing_date %>
 <% @roundtrips.each { |p_n_l| %>
 TD
@@ -7,9 +7,9 @@ TD
 C1
 L1
 P<%= number_with_precision(p_n_l.open.qty, :precision => 0, :delimiter => ',') %> <%= "[Short] " if p_n_l.open.trade.position == :short %><%= p_n_l.open.trade.name %> (<%= p_n_l.open.trade.symbol %>)
-D<%= p_n_l.open.trade.date %>
-D<%= p_n_l.close.trade.date %>
-$<%= number_to_currency(- p_n_l.costbasis, :unit => "") %>
+D<%= p_n_l.execution_side_by_action(:buy).trade.date %>
+D<%= p_n_l.execution_side_by_action(:sell).trade.date %>
+$<%= number_to_currency(p_n_l.costbasis, :unit => "") %>
 $<%= number_to_currency(p_n_l.sales_price, :unit => "") %>
 ^
 <% } %>

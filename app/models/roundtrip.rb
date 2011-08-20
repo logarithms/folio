@@ -24,7 +24,7 @@ class Roundtrip < ActiveRecord::Base
   end
 
   def costbasis
-    execution_side_by_action(:buy).amount
+    -execution_side_by_action(:buy).amount
   end
 
   def sales_price
@@ -32,7 +32,7 @@ class Roundtrip < ActiveRecord::Base
   end
 
   def profit
-    costbasis + sales_price
+    sales_price - costbasis
   end
 
   def profit?
