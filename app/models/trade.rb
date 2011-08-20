@@ -50,6 +50,11 @@ class Trade < ActiveRecord::Base
   def unmatched_qty
     qty - executions.sum(:qty)
   end
+
+ def unmatched_amount
+   amount * unmatched_qty / qty
+ end
+
 require "instrument.rb"
   def name
     Instrument.new.name symbol.to_sym

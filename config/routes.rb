@@ -13,6 +13,8 @@ Folio::Application.routes.draw do
 
   resources :trades
 
+  match 'portfolio' => 'portfolio#index'
+
   get "home/index"
 
   # The priority is based upon order of creation:
