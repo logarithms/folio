@@ -13,8 +13,8 @@
 <% @roundtrips.each do |roundtrip| %>
   <tr>
     <td><%= number_with_precision(roundtrip.open.qty, :precision => 0, :delimiter => ',') %> <%= "[Short] " if roundtrip.open.trade.position == :short %><%= roundtrip.open.trade.name %> (<%= roundtrip.open.trade.symbol %>)</td>
-    <td><%= roundtrip.execution_side_by_action(:buy)..trade.date %></td>
-    <td><%= roundtrip.execution_side_by_action(:sell)..trade.date %></td>
+    <td><%= roundtrip.execution_side_by_action(:buy).trade.date %></td>
+    <td><%= roundtrip.execution_side_by_action(:sell).trade.date %></td>
     <td><%= number_to_currency(roundtrip.sales_price, :unit => "") %></td>
     <td><%= number_to_currency(roundtrip.costbasis, :unit => "") %></td>
     <td><%= number_to_currency( roundtrip.profit , :negative_format => "(%u%n)") %></td>

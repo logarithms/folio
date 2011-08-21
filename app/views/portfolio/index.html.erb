@@ -1,4 +1,31 @@
-<h1>Portfolio</h1>
+<h2>Portfolio</h2>
+
+<h3>Aggregate postions</h3>
+<table>
+  <tr>
+    <th>Symbol</th>
+    <th>Position</th>
+    <th>Qty</th>
+    <th>Amount</th>
+  </tr>
+<% @balance.each { |symbol,pos| 
+     pos.each { |position, val|
+       if val[:tot_qty] > 0.00001
+%>
+  <tr>
+    <td><%= symbol %></td>
+    <td><%= position %></td>
+    <td><%= val[:tot_qty] %></td>
+    <td><%= val[:tot_cost] %></td>
+  </tr>
+<%
+       end
+     }
+  }
+%>
+</table>
+<hr></hr>
+<h3>Individal unmatched open trades</h3>
 
 <table>
   <tr>

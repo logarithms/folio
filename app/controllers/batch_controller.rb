@@ -1,5 +1,6 @@
 class BatchController < ApplicationController
   def index
+    @processing_date = DateTime.now.to_date.strftime "%m/%d/%Y"
     @files = Dir.glob("data/Ameritrade-*.csv") .each { |s|
         s.gsub! /data\/Ameritrade-(.*).csv/, '\1'
     }

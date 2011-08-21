@@ -2,6 +2,7 @@ class RoundtripsController < ApplicationController
   # GET /roundtrips
   # GET /roundtrips.xml
   def index
+    @processing_date = DateTime.now.to_date.strftime "%m/%d/%Y"
     @roundtrips = Roundtrip.all
 
     if params[:special] == "trade_exec"
